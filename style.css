@@ -1,7 +1,7 @@
-/* nav .brand-logo {
-    font-size: 2rem;
-    justify-content: center;
-  } */
+nav-wrapper a {
+    font-size: 6vw;   
+    /* justify-content: center; */
+  }
 
   /* #dropdown {
       margin-right: 2em;
