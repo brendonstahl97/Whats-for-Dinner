@@ -3,6 +3,7 @@ var cardTitleEl = $(".cardTitle");
 var searchEl = $(".searchBox");
 
 
+
 $(".submitBtn").on("click", function (event) {
     event.preventDefault();
 
@@ -24,6 +25,4 @@ $(".submitBtn").on("click", function (event) {
         }
 
     })
-
 })
-
