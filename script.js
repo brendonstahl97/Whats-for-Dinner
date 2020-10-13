@@ -14,3 +14,8 @@ $.ajax({
     cardImgEl.attr("src", response.results[4].image);
     cardTitleEl.text(response.results[4].title);
 })
+
+
+
+
+
