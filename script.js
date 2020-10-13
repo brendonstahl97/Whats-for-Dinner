@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     var cardImgEl = $(".cardImg");
     var cardTitleEl = $(".cardTitle");
@@ -26,8 +26,6 @@ $(document).ready(function(){
                 cardImgEl.attr("src", "https://memo-village.online/absolutely_nothing.png");
                 cardTitleEl.text("No Recipe");
             }
-
         })
     })
-
 })
