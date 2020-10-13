@@ -1,8 +1,10 @@
-/* nav .brand-logo {
-    font-size: 2rem;
-    justify-content: center;
-  } */
 
-  /* #dropdown {
-      margin-right: 2em;
-  } */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
+.card-title {
+    text-shadow: 1px 1px rgb(37, 35, 35);
+}
+

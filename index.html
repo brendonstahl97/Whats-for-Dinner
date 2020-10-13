@@ -18,28 +18,30 @@
 
   <title>What's for Dinner?</title>
 
-</head>
+  </head>
 
+  <body>
 
     <nav>
-      <div class="nav-wrapper s12 m12">
-        <a href="#" class="brand-logo center" style="justify-content: center;">What's for Dinner</a>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center" style="font-size: 6vmin ">What's for Dinner</a>
         
       </div>
     </nav>
     
-    <div class="container" >
+  <div class="container right">
+    
     <div class="row">
-        <form id="user-input" class="col s12 m12">
-          
+
+        <form id="user-input" class="col s10 m8 offset-m1 l8">
           <div class="row">
             <div class="input-field col s12">
-              <input id="ingredient" type="text" class="validate" placeholder="What Would You Like to Eat Today?">
+              <input id="ingredient" type="text" class="validate searchBox" placeholder="What Would You Like to Eat Today?">
             </div>
           </div>
 
           <div class="row">
-              <select id="dropdown" class="browser-default col s12">
+              <select id="dropdown" class="browser-default col s12 dropMenu">
                 <option value="" disabled selected>Choose Your Cuisine</option>
                 <option value="1">Italian</option>
                 <option value="2">Mexican</option>
@@ -50,19 +52,17 @@
                 <option value="3">American</option>
               </select>
           </div>       
-           
+
           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
+            <i class="material-icons right">local_dining</i>
+
           </button>
-
-
         </form>
-    </div>
-        
+    </div>   
     
     <div class="row">
-      <div class="col s12 m12">
-        <div class="card">
+      <div class="col s10 m8 offset-m1 l8">
+        <div class="card hoverable">
           <div class="card-image cardImg">
             <img class = "cardImg"
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=&q=80">
@@ -79,27 +79,26 @@
       </div>
     </div>
       
-
-        <div class="row"> 
-            <div class="col s12">
-                <div class="card">
-                <div class="card-image">
-                    <img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/10/pumpkin-pad-thai-recipe.jpg?fit=1200%2C879&ssl=1">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">This is a link</a>
-                </div>
-                </div>
+    <div class="row"> 
+        <div class="col s10 m8 offset-m1 l8">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/10/pumpkin-pad-thai-recipe.jpg?fit=1200%2C879&ssl=1">
+              <span class="card-title">Card Title</span>
             </div>
-
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
+      
+  </div>
+    
     
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -108,6 +107,8 @@
       <!-- //Mels javascript  -->
     
    <script src="restaurants.js"></script>
-    </body>
+      <script type="text/javascript" src="script.js"></script>
+
+  </body>
   </html>
 
