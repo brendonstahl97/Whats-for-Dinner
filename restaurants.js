@@ -8,7 +8,6 @@ submitBtnEl.on("click", e => {
   let cuisine = $(".dropMenu option:selected");
 
   var queryUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + cuisine + "restaurants&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY";
-  console.log(queryUrl);
 
   var proxyurl = "https://cors-anywhere.herokuapp.com/";
 
@@ -48,6 +47,8 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
 }
+
+
 // https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyDxxU7miZ7Ya2z4gROnwiTK7BfdbdfNxcE&input=mexican&inputtype=textquery
 
 
