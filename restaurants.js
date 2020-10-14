@@ -1,9 +1,10 @@
 let form = document.getElementById("user-input");
+
 form.addEventListener('submit',e =>{
   e.preventDefault();
    let searchTerm = document.getElementById("ingredient").value; 
    let cuisine = document.getElementById('dropdown').value;
-   var queryUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY" + searchTerm + "&cuisine=" + cuisine;
+   var queryUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + cuisine + "restaurants&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY";
    
    $.ajax({
       url: queryUrl,
@@ -17,9 +18,16 @@ form.addEventListener('submit',e =>{
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDxxU7miZ7Ya2z4gROnwiTK7BfdbdfNxcE&name=mexican";
-fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-.then(response => response.json())
-.then(contents => console.log(contents))
+
+$.ajax({
+  url: proxyurl + url,
+  method: "GET",
+  dataType:"JSONP",
+  cache:false
+}).then(response => {
+  console.log("response", response)
+})
+// .then(contents => console.log(contents))
 .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 })
 
