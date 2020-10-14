@@ -59,7 +59,7 @@ $(document).ready(function () {
                     var recipeButton = $("<button>");
                     recipeButton.attr("value", recipe.id);
                     recipeButton.text("View Recipe");
-                    recipeButton.addClass("recipeButton");
+                    recipeButton.addClass("btn waves-effect waves-light recipeButton");
 
                     cardImg.append(img);
                     cardImg.append(cardSpan);
@@ -75,6 +75,19 @@ $(document).ready(function () {
 
                 });
 
+                $(".recipeButton").on("click", function (event) {
+                    event.preventDefault();
+                    var queryUrl = "https://api.spoonacular.com/recipes/" + this.value + "/information?includeNutrition=false&apiKey=b63ea46c590b456094f45bd8a111ded9";
+                    
+                    $.ajax({
+                        url: queryUrl,
+                        method: "GET"
+                    }).then (function(response) {
+
+                        window.open(response.spoonacularSourceUrl, "_blank");
+                    })
+                })
+
 
             } else {
 
@@ -86,10 +99,10 @@ $(document).ready(function () {
         })
     })
 
+    $(".recipeButton").on("click", function (event) {
+        event.preventDefault();
+        console.log(this.value);
+    })
 
 })
 
-$(".recipeButton").on("click", function (event) {
-    event.preventDefault();
-    console.log(this.value);
-})
