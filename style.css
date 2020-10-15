@@ -8,3 +8,8 @@ body {
     text-shadow: 1px 1px rgb(37, 35, 35);
 }
 
+#cardContainer {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
