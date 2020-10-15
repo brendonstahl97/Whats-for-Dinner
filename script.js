@@ -31,9 +31,6 @@ $(document).ready(function () {
 
                 recipes.forEach(recipe => {
 
-                    cardImgEl.attr("src", recipe.image);
-                    cardTitleEl.text(recipe.title);
-
                     var rowDiv = $("<div>");
                     rowDiv.addClass("row");
 

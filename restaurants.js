@@ -24,7 +24,7 @@ form.addEventListener('submit', e => {
     .then(response => {
       console.log('place ajax response', response);
     })
-    .catch(() => console.log('Can't access ' + url + ' response. Blocked by browser?'));
+    .catch(() => console.log('Can't access ' + url + ' response.Blocked by browser ? '));
 });
 function getLocation() {
   if (navigator.geolocation) {
