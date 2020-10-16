@@ -34,6 +34,7 @@ form.addEventListener('submit', e => {
 
 
 
+
   // const placeUrl =
   //   `https://maps.googleapis.com/maps/api/place/nearbysearch/json?${userLocation}&radius=32000&type=restaurant&keyword=${searchTerm}&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY`;
   // $.ajax({
@@ -44,6 +45,7 @@ form.addEventListener('submit', e => {
   //     console.log('place ajax response', response);
   //   })
   //   .catch(()  => console.log("Can't access " + url + " response. Blocked by browser?"));
+
 });
 
 
