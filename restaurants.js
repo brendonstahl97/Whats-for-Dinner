@@ -13,7 +13,7 @@ function showPosition(position) {
   return 'location=' + position.coords.latitude + ',' + position.coords.longitude;
 }
 
-form.addEventListener('submit', e => {
+$(".submitBtn").on("click",  e => {
 
   e.preventDefault();
   let searchTerm = document.getElementById('ingredient').value;
@@ -102,7 +102,7 @@ function createCards(response) {
     colDiv.append(cardDiv);
     rowDiv.append(colDiv);
 
-    $(".cardContainer").append(rowDiv);
+    $(".restaurantContainer").append(rowDiv);
 
 
 

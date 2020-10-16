@@ -68,7 +68,7 @@ $(document).ready(function () {
                     colDiv.append(cardDiv);
                     rowDiv.append(colDiv);
 
-                    $(".cardContainer").append(rowDiv);
+                    $(".recipeContainer").append(rowDiv);
 
                 });
 
