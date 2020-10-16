@@ -10,7 +10,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (hasSearched) {
-            $(".cardContainer").empty();
+            $(".recipeContainer").empty();
             hasSearched = false;
         }
 

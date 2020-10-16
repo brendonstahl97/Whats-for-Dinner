@@ -1,4 +1,5 @@
 let form = document.getElementById('user-input');
+var hasSearched = false;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -13,7 +14,12 @@ function showPosition(position) {
   return 'location=' + position.coords.latitude + ',' + position.coords.longitude;
 }
 
-$(".submitBtn").on("click",  e => {
+$(".submitBtn").on("click", e => {
+
+  if (hasSearched) {
+    $(".restaurantContainer").empty();
+    hasSearched = false;
+  }
 
   e.preventDefault();
   let searchTerm = document.getElementById('ingredient').value;
@@ -29,6 +35,7 @@ $(".submitBtn").on("click",  e => {
     method: 'GET',
   }).then(function (response) {
     console.log('response from 1st ajax:', response);
+    hasSearched = true;
     createCards(response);
   });
 
@@ -103,9 +110,6 @@ function createCards(response) {
     rowDiv.append(colDiv);
 
     $(".restaurantContainer").append(rowDiv);
-
-
-
   })
 
 }
