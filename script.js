@@ -88,6 +88,7 @@ $(document).ready(function () {
 
             } else {
 
+                
                 cardImgEl.attr("src", "https://memo-village.online/absolutely_nothing.png");
                 cardTitleEl.text("No Recipes Found");
 
