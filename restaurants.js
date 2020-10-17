@@ -31,9 +31,8 @@ $(".submitBtn").on("click", e => {
   let cuisine = document.getElementById('dropdown').value;
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
   var queryUrl =
-    `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${cuisine}restaurants&locationbias=circle:${searchRadius}@${lat},${lon}&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY`;
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + cuisine + "&type=restaurant&location=" + lat + "," + lon + "&radius=" + searchRadius + "&key=AIzaSyAz5S2li77P9Mh37AU2wN3bJ4_749FUZvY";
 
-    // console.log(queryUrl);
 
   $.ajax({
     url: proxyurl + queryUrl,
