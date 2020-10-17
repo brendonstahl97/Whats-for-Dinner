@@ -4,10 +4,18 @@ body {
 
 }
 
+#pageHdr {
+    font-size: 6vmin;
+    text-shadow: 1px 1px rgb(37, 35, 35);
+}
+
 .card-title {
     text-shadow: 1px 1px rgb(37, 35, 35);
 }
 
+
 h4 {
+    color: rgb(37, 35, 35);
     text-align: center;
+    text-shadow: 0.5px 0.5px #ee6e73;
 }
