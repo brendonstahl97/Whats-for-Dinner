@@ -6,6 +6,7 @@ $(document).ready(function () {
     var numRecipes = 5;
     var hasSearched = false;
 
+    $(".heading").hide();
     //Get the array from localStorage
     var list = JSON.parse(localStorage.getItem('cuisineArr'));
     var l = list.length;
@@ -68,6 +69,8 @@ $(document).ready(function () {
 
     $(".submitBtn").on("click", function (event) {
         event.preventDefault();
+
+        $(".heading").show();
 
         if (hasSearched) {
             $(".recipeContainer").empty();
