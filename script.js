@@ -6,8 +6,12 @@ $(document).ready(function () {
     var numRecipes = 5;
     var hasSearched = false;
 
+    $(".heading").hide();
+
     $(".submitBtn").on("click", function (event) {
         event.preventDefault();
+
+        $(".heading").show();
 
         if (hasSearched) {
             $(".recipeContainer").empty();
