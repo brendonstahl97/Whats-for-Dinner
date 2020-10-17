@@ -10,7 +10,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (hasSearched) {
-            $(".cardContainer").empty();
+            $(".recipeContainer").empty();
             hasSearched = false;
         }
 
@@ -73,6 +73,7 @@ $(document).ready(function () {
                 });
 
                 $(".recipeButton").on("click", function (event) {
+                    
                     event.preventDefault();
                     var queryUrl = "https://api.spoonacular.com/recipes/" + this.value + "/information?includeNutrition=false&apiKey=b63ea46c590b456094f45bd8a111ded9";
                     
@@ -88,10 +89,8 @@ $(document).ready(function () {
 
             } else {
 
-                
                 cardImgEl.attr("src", "https://memo-village.online/absolutely_nothing.png");
                 cardTitleEl.text("No Recipes Found");
-
             }
             hasSearched = true;
         })
@@ -101,6 +100,5 @@ $(document).ready(function () {
         event.preventDefault();
         console.log(this.value);
     })
-
 })
 
