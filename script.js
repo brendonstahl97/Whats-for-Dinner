@@ -7,64 +7,65 @@ $(document).ready(function () {
     var hasSearched = false;
 
     //Get the array from localStorage
-    var list = JSON.parse(localStorage.getItem('cuisineArr'));
-    var l = list.length;
-    var prevSearchI = list[l-1].ingredient;
-    var prevSearchC = list[l-1].cuisineStore;
+    if(localStorage.getItem('cuisineArr')){
+        var list = JSON.parse(localStorage.getItem('cuisineArr'));
+        var l = list.length;
+        var prevSearchI = list[l-1].ingredient;
+        var prevSearchC = list[l-1].cuisineStore;
 
-    var queryUrl2 = "https://api.spoonacular.com/recipes/complexSearch?query=" + prevSearchI + "&cuisine=" + prevSearchC + "&apiKey=b63ea46c590b456094f45bd8a111ded9";
-    $.ajax({
-        url: queryUrl2,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-        //Display most recent 5 results upon opening page
-        if(response.results.length > 0){
-            var recipes = response.results.slice(0, numRecipes);
-            recipes.forEach(recipe => {
+        var queryUrl2 = "https://api.spoonacular.com/recipes/complexSearch?query=" + prevSearchI + "&cuisine=" + prevSearchC + "&apiKey=b63ea46c590b456094f45bd8a111ded9";
+        $.ajax({
+            url: queryUrl2,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            //Display most recent 5 results upon opening page
+            if(response.results.length > 0){
+                var recipes = response.results.slice(0, numRecipes);
+                recipes.forEach(recipe => {
 
-                var rowDiv = $("<div>");
-                rowDiv.addClass("row");
+                    var rowDiv = $("<div>");
+                    rowDiv.addClass("row");
 
-                var colDiv = $("<div>");
-                colDiv.addClass("col s10 m8 offset-m1 l8");
+                    var colDiv = $("<div>");
+                    colDiv.addClass("col s10 m8 offset-m1 l8");
 
-                var cardDiv = $("<div>");
-                cardDiv.addClass("card hoverable");
+                    var cardDiv = $("<div>");
+                    cardDiv.addClass("card hoverable");
 
-                var cardImg = $("<div>");
-                cardImg.addClass("card-image cardImg");
+                    var cardImg = $("<div>");
+                    cardImg.addClass("card-image cardImg");
 
-                var img = $("<img>");
-                img.attr("src", recipe.image);
+                    var img = $("<img>");
+                    img.attr("src", recipe.image);
 
-                var cardSpan = $("<span>");
-                cardSpan.addClass("card-title");
-                cardSpan.text(recipe.title);
+                    var cardSpan = $("<span>");
+                    cardSpan.addClass("card-title");
+                    cardSpan.text(recipe.title);
 
-                var cardActionDiv = $("<div>");
-                cardActionDiv.addClass("card-content");
+                    var cardActionDiv = $("<div>");
+                    cardActionDiv.addClass("card-content");
 
-                var recipeButton = $("<button>");
-                recipeButton.attr("value", recipe.id);
-                recipeButton.text("View Recipe");
-                recipeButton.addClass("btn waves-effect waves-light recipeButton");
+                    var recipeButton = $("<button>");
+                    recipeButton.attr("value", recipe.id);
+                    recipeButton.text("View Recipe");
+                    recipeButton.addClass("btn waves-effect waves-light recipeButton");
 
-                cardImg.append(img);
-                cardImg.append(cardSpan);
+                    cardImg.append(img);
+                    cardImg.append(cardSpan);
 
-                cardActionDiv.append(recipeButton);
+                    cardActionDiv.append(recipeButton);
 
-                cardDiv.append(cardImg);
-                cardDiv.append(cardActionDiv);
-                colDiv.append(cardDiv);
-                rowDiv.append(colDiv);
+                    cardDiv.append(cardImg);
+                    cardDiv.append(cardActionDiv);
+                    colDiv.append(cardDiv);
+                    rowDiv.append(colDiv);
 
-                $(".recipeContainer").append(rowDiv);
-            });
-        }
- });
-
+                    $(".recipeContainer").append(rowDiv);
+                });
+            }
+        });
+    }
 
     $(".submitBtn").on("click", function (event) {
         event.preventDefault();
@@ -83,7 +84,7 @@ $(document).ready(function () {
         var newResult = {ingredient: searchTerm, cuisineStore: cuisine};
         storedResults.push(newResult);
         localStorage.setItem('cuisineArr', JSON.stringify(storedResults));
-        console.log('localStorage: ', localStorage);
+        // console.log('localStorage: ', localStorage);
 
         var queryUrl = "https://api.spoonacular.com/recipes/complexSearch?query=" + searchTerm + "&cuisine=" + cuisine + "&apiKey=b63ea46c590b456094f45bd8a111ded9";
 
