@@ -74,12 +74,6 @@ $(document).ready(function () {
         });
     }
 
-                    $(".recipeContainer").append(rowDiv);
-                });
-            }
-        });
-    }
-
     $(".submitBtn").on("click", function (event) {
         event.preventDefault();
 
