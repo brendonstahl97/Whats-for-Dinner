@@ -11,6 +11,7 @@ $(document).ready(function () {
     //Get the array from localStorage
 
     if (localStorage.getItem('cuisineArr')) {
+        hasSearched = true;
         $(".heading").show();
 
 
@@ -18,14 +19,14 @@ $(document).ready(function () {
         var l = list.length;
         var prevSearchI = list[l - 1].ingredient;
         var prevSearchC = list[l - 1].cuisineStore;
-      
+
         var queryUrl2 = "https://api.spoonacular.com/recipes/complexSearch?query=" + prevSearchI + "&cuisine=" + prevSearchC + "&apiKey=b63ea46c590b456094f45bd8a111ded9";
         $.ajax({
             url: queryUrl2,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-          
+
             //Display most recent 5 results upon opening page
             if (response.results.length > 0) {
                 var recipes = response.results.slice(0, numRecipes);
@@ -77,12 +78,15 @@ $(document).ready(function () {
     $(".submitBtn").on("click", function (event) {
         event.preventDefault();
 
+
         $(".heading").show();
 
         if (hasSearched) {
             $(".recipeContainer").empty();
             hasSearched = false;
+
         }
+
 
         var searchTerm = searchEl.val();
         var cuisineEl = $(".dropMenu option:selected");
@@ -93,7 +97,6 @@ $(document).ready(function () {
         var newResult = { ingredient: searchTerm, cuisineStore: cuisine };
         storedResults.push(newResult);
         localStorage.setItem('cuisineArr', JSON.stringify(storedResults));
-        // console.log('localStorage: ', localStorage);
 
         var queryUrl = "https://api.spoonacular.com/recipes/complexSearch?query=" + searchTerm + "&cuisine=" + cuisine + "&apiKey=b63ea46c590b456094f45bd8a111ded9";
 
