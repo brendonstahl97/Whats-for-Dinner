@@ -14,7 +14,7 @@ https://brendonstahl97.github.io/Whats-for-Dinner/
 
 ## Example Photos
 ![mobileview2](https://user-images.githubusercontent.com/67798273/96348353-31a4c780-1076-11eb-8863-0cba4064690d.PNG)
-![examplephoto2](examplePhoto2.jpg)
+![examplephoto2](examplePhoto2.png)
 ![examplephoto3](examplePhoto3.jpg)
 
 ## Collaborators
