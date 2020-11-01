@@ -4,9 +4,22 @@ An easy to use application for finding recipes and restaurants based on ingredie
 
 https://brendonstahl97.github.io/Whats-for-Dinner/
 
+## Technologies Used
+  *HTML
+  *CSS
+  *JavaScript
+  *Google Places API
+  *Spoonacular API
 
 
+## Example Photos
 ![mobileview2](https://user-images.githubusercontent.com/67798273/96348353-31a4c780-1076-11eb-8863-0cba4064690d.PNG)
+
+## Collaborators
+  *https://github.com/brendonstahl97
+  *https://github.com/MStuart90
+  *https://github.com/kas1330
+  *https://github.com/CrawG
 
 ## License
 
